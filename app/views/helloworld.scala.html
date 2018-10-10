@@ -1,0 +1,15 @@
+@(form: Form[forms.UserData])
+
+@main("Hello world") {
+	<b>Hello World! @session().get("page")</b>
+	
+	@helper.form(routes.HelloworldController.submit()) {
+		@helper.CSRF.formField
+	
+		@helper.inputText(form("lastname"), '_id -> "nom", '_showConstraints -> false, 'size -> 10, 'id -> "nom2")
+		@helper.inputText(form("firstname"), '_showConstraints -> false)
+		@helper.inputText(form("email"), '_showConstraints -> false)
+		@helper.inputText(form("content"), '_showConstraints -> false)
+		<button type="submit">@Messages("form.validate")</button>
+	}
+}

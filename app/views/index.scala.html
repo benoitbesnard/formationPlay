@@ -1,0 +1,14 @@
+@(name: String)
+
+@main("Welcome to Play") {
+
+	@if(flash().get("success") != null) {
+		<div class="alert success">@flash().get("success")</div>
+	}
+
+  <h1>@Messages("welcome", "Besnard", name)</h1>
+  <a href="@controllers.routes.HomeController.myChangeLang("fr")">Français</a> | 
+  <a href="@controllers.routes.HomeController.myChangeLang("en")">English</a> | 
+  <a href="@controllers.routes.HomeController.myChangeLang("es")">Español</a>
+  <br/><img src="@routes.Assets.versioned("images/play.jpeg")" alt="Play Framework"/>
+}
