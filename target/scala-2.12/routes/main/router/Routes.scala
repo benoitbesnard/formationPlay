@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/bbesnard/formationPlay/test2/conf/routes
-// @DATE:Wed Oct 10 08:49:31 CEST 2018
+// @DATE:Wed Oct 10 14:21:29 CEST 2018
 
 package router
 
@@ -15,27 +15,35 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  HomeController_0: controllers.HomeController,
+  HomeController_2: controllers.HomeController,
   // @LINE:8
-  HelloworldController_2: controllers.HelloworldController,
-  // @LINE:20
-  Assets_1: controllers.Assets,
+  HelloworldController_1: controllers.HelloworldController,
+  // @LINE:19
+  WSController_0: controllers.WSController,
+  // @LINE:22
+  EmployeeController_3: controllers.EmployeeController,
+  // @LINE:29
+  Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    HomeController_0: controllers.HomeController,
+    HomeController_2: controllers.HomeController,
     // @LINE:8
-    HelloworldController_2: controllers.HelloworldController,
-    // @LINE:20
-    Assets_1: controllers.Assets
-  ) = this(errorHandler, HomeController_0, HelloworldController_2, Assets_1, "/")
+    HelloworldController_1: controllers.HelloworldController,
+    // @LINE:19
+    WSController_0: controllers.WSController,
+    // @LINE:22
+    EmployeeController_3: controllers.EmployeeController,
+    // @LINE:29
+    Assets_4: controllers.Assets
+  ) = this(errorHandler, HomeController_2, HelloworldController_1, WSController_0, EmployeeController_3, Assets_4, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, HelloworldController_2, Assets_1, prefix)
+    new Routes(errorHandler, HomeController_2, HelloworldController_1, WSController_0, EmployeeController_3, Assets_4, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -55,6 +63,12 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """gotohelloworld""", """controllers.HelloworldController.gotohelloworld"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """get-persons""", """controllers.HelloworldController.getPersons"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """receive-persons""", """controllers.HelloworldController.receivePerson"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """clever-age""", """controllers.WSController.get"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """send-persons""", """controllers.WSController.post"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employees""", """controllers.EmployeeController.listAll()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employees""", """controllers.EmployeeController.listAllActifByAge(order:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.EmployeeController.formName"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.EmployeeController.search"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -68,7 +82,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_0.index,
+    HomeController_2.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -86,7 +100,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("change-lang")))
   )
   private[this] lazy val controllers_HomeController_myChangeLang1_invoker = createInvoker(
-    HomeController_0.myChangeLang(fakeValue[String]),
+    HomeController_2.myChangeLang(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -104,7 +118,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello-world")))
   )
   private[this] lazy val controllers_HelloworldController_helloworld2_invoker = createInvoker(
-    HelloworldController_2.helloworld,
+    HelloworldController_1.helloworld,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -122,7 +136,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello-world")))
   )
   private[this] lazy val controllers_HelloworldController_submit3_invoker = createInvoker(
-    HelloworldController_2.submit,
+    HelloworldController_1.submit,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -140,7 +154,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello/pastrouve")))
   )
   private[this] lazy val controllers_HelloworldController_pasTrouve4_invoker = createInvoker(
-    HelloworldController_2.pasTrouve,
+    HelloworldController_1.pasTrouve,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -158,7 +172,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello/pasautorise")))
   )
   private[this] lazy val controllers_HelloworldController_pasAutorise5_invoker = createInvoker(
-    HelloworldController_2.pasAutorise,
+    HelloworldController_1.pasAutorise,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -176,7 +190,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello")))
   )
   private[this] lazy val controllers_HelloworldController_hello6_invoker = createInvoker(
-    HelloworldController_2.hello(fakeValue[String]),
+    HelloworldController_1.hello(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -194,7 +208,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello/"), DynamicPart("name", """[^/]+""",true)))
   )
   private[this] lazy val controllers_HelloworldController_hello7_invoker = createInvoker(
-    HelloworldController_2.hello(fakeValue[String]),
+    HelloworldController_1.hello(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -212,7 +226,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("gotohome")))
   )
   private[this] lazy val controllers_HelloworldController_gotohome8_invoker = createInvoker(
-    HelloworldController_2.gotohome,
+    HelloworldController_1.gotohome,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -230,7 +244,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("gotohelloworld")))
   )
   private[this] lazy val controllers_HelloworldController_gotohelloworld9_invoker = createInvoker(
-    HelloworldController_2.gotohelloworld,
+    HelloworldController_1.gotohelloworld,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -248,7 +262,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("get-persons")))
   )
   private[this] lazy val controllers_HelloworldController_getPersons10_invoker = createInvoker(
-    HelloworldController_2.getPersons,
+    HelloworldController_1.getPersons,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -266,7 +280,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("receive-persons")))
   )
   private[this] lazy val controllers_HelloworldController_receivePerson11_invoker = createInvoker(
-    HelloworldController_2.receivePerson,
+    HelloworldController_1.receivePerson,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HelloworldController",
@@ -279,12 +293,120 @@ class Routes(
     )
   )
 
+  // @LINE:19
+  private[this] lazy val controllers_WSController_get12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("clever-age")))
+  )
+  private[this] lazy val controllers_WSController_get12_invoker = createInvoker(
+    WSController_0.get,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.WSController",
+      "get",
+      Nil,
+      "GET",
+      this.prefix + """clever-age""",
+      """""",
+      Seq()
+    )
+  )
+
   // @LINE:20
-  private[this] lazy val controllers_Assets_versioned12_route = Route("GET",
+  private[this] lazy val controllers_WSController_post13_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("send-persons")))
+  )
+  private[this] lazy val controllers_WSController_post13_invoker = createInvoker(
+    WSController_0.post,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.WSController",
+      "post",
+      Nil,
+      "GET",
+      this.prefix + """send-persons""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_EmployeeController_listAll14_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("employees")))
+  )
+  private[this] lazy val controllers_EmployeeController_listAll14_invoker = createInvoker(
+    EmployeeController_3.listAll(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.EmployeeController",
+      "listAll",
+      Nil,
+      "GET",
+      this.prefix + """employees""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:23
+  private[this] lazy val controllers_EmployeeController_listAllActifByAge15_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("employees")))
+  )
+  private[this] lazy val controllers_EmployeeController_listAllActifByAge15_invoker = createInvoker(
+    EmployeeController_3.listAllActifByAge(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.EmployeeController",
+      "listAllActifByAge",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """employees""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:25
+  private[this] lazy val controllers_EmployeeController_formName16_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("search")))
+  )
+  private[this] lazy val controllers_EmployeeController_formName16_invoker = createInvoker(
+    EmployeeController_3.formName,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.EmployeeController",
+      "formName",
+      Nil,
+      "GET",
+      this.prefix + """search""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:26
+  private[this] lazy val controllers_EmployeeController_search17_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("search")))
+  )
+  private[this] lazy val controllers_EmployeeController_search17_invoker = createInvoker(
+    EmployeeController_3.search,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.EmployeeController",
+      "search",
+      Nil,
+      "POST",
+      this.prefix + """search""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:29
+  private[this] lazy val controllers_Assets_versioned18_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned12_invoker = createInvoker(
-    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned18_invoker = createInvoker(
+    Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -303,79 +425,115 @@ class Routes(
     // @LINE:6
     case controllers_HomeController_index0_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_0.index)
+        controllers_HomeController_index0_invoker.call(HomeController_2.index)
       }
   
     // @LINE:7
     case controllers_HomeController_myChangeLang1_route(params@_) =>
       call(params.fromQuery[String]("code", None)) { (code) =>
-        controllers_HomeController_myChangeLang1_invoker.call(HomeController_0.myChangeLang(code))
+        controllers_HomeController_myChangeLang1_invoker.call(HomeController_2.myChangeLang(code))
       }
   
     // @LINE:8
     case controllers_HelloworldController_helloworld2_route(params@_) =>
       call { 
-        controllers_HelloworldController_helloworld2_invoker.call(HelloworldController_2.helloworld)
+        controllers_HelloworldController_helloworld2_invoker.call(HelloworldController_1.helloworld)
       }
   
     // @LINE:9
     case controllers_HelloworldController_submit3_route(params@_) =>
       call { 
-        controllers_HelloworldController_submit3_invoker.call(HelloworldController_2.submit)
+        controllers_HelloworldController_submit3_invoker.call(HelloworldController_1.submit)
       }
   
     // @LINE:10
     case controllers_HelloworldController_pasTrouve4_route(params@_) =>
       call { 
-        controllers_HelloworldController_pasTrouve4_invoker.call(HelloworldController_2.pasTrouve)
+        controllers_HelloworldController_pasTrouve4_invoker.call(HelloworldController_1.pasTrouve)
       }
   
     // @LINE:11
     case controllers_HelloworldController_pasAutorise5_route(params@_) =>
       call { 
-        controllers_HelloworldController_pasAutorise5_invoker.call(HelloworldController_2.pasAutorise)
+        controllers_HelloworldController_pasAutorise5_invoker.call(HelloworldController_1.pasAutorise)
       }
   
     // @LINE:12
     case controllers_HelloworldController_hello6_route(params@_) =>
       call(params.fromQuery[String]("name", None)) { (name) =>
-        controllers_HelloworldController_hello6_invoker.call(HelloworldController_2.hello(name))
+        controllers_HelloworldController_hello6_invoker.call(HelloworldController_1.hello(name))
       }
   
     // @LINE:13
     case controllers_HelloworldController_hello7_route(params@_) =>
       call(params.fromPath[String]("name", None)) { (name) =>
-        controllers_HelloworldController_hello7_invoker.call(HelloworldController_2.hello(name))
+        controllers_HelloworldController_hello7_invoker.call(HelloworldController_1.hello(name))
       }
   
     // @LINE:14
     case controllers_HelloworldController_gotohome8_route(params@_) =>
       call { 
-        controllers_HelloworldController_gotohome8_invoker.call(HelloworldController_2.gotohome)
+        controllers_HelloworldController_gotohome8_invoker.call(HelloworldController_1.gotohome)
       }
   
     // @LINE:15
     case controllers_HelloworldController_gotohelloworld9_route(params@_) =>
       call { 
-        controllers_HelloworldController_gotohelloworld9_invoker.call(HelloworldController_2.gotohelloworld)
+        controllers_HelloworldController_gotohelloworld9_invoker.call(HelloworldController_1.gotohelloworld)
       }
   
     // @LINE:16
     case controllers_HelloworldController_getPersons10_route(params@_) =>
       call { 
-        controllers_HelloworldController_getPersons10_invoker.call(HelloworldController_2.getPersons)
+        controllers_HelloworldController_getPersons10_invoker.call(HelloworldController_1.getPersons)
       }
   
     // @LINE:17
     case controllers_HelloworldController_receivePerson11_route(params@_) =>
       call { 
-        controllers_HelloworldController_receivePerson11_invoker.call(HelloworldController_2.receivePerson)
+        controllers_HelloworldController_receivePerson11_invoker.call(HelloworldController_1.receivePerson)
+      }
+  
+    // @LINE:19
+    case controllers_WSController_get12_route(params@_) =>
+      call { 
+        controllers_WSController_get12_invoker.call(WSController_0.get)
       }
   
     // @LINE:20
-    case controllers_Assets_versioned12_route(params@_) =>
+    case controllers_WSController_post13_route(params@_) =>
+      call { 
+        controllers_WSController_post13_invoker.call(WSController_0.post)
+      }
+  
+    // @LINE:22
+    case controllers_EmployeeController_listAll14_route(params@_) =>
+      call { 
+        controllers_EmployeeController_listAll14_invoker.call(EmployeeController_3.listAll())
+      }
+  
+    // @LINE:23
+    case controllers_EmployeeController_listAllActifByAge15_route(params@_) =>
+      call(params.fromQuery[String]("order", None)) { (order) =>
+        controllers_EmployeeController_listAllActifByAge15_invoker.call(EmployeeController_3.listAllActifByAge(order))
+      }
+  
+    // @LINE:25
+    case controllers_EmployeeController_formName16_route(params@_) =>
+      call { 
+        controllers_EmployeeController_formName16_invoker.call(EmployeeController_3.formName)
+      }
+  
+    // @LINE:26
+    case controllers_EmployeeController_search17_route(params@_) =>
+      call { 
+        controllers_EmployeeController_search17_invoker.call(EmployeeController_3.search)
+      }
+  
+    // @LINE:29
+    case controllers_Assets_versioned18_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned12_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned18_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/bbesnard/formationPlay/test2/conf/routes
-// @DATE:Wed Oct 10 08:49:31 CEST 2018
+// @DATE:Wed Oct 10 14:21:29 CEST 2018
 
 
 package router {

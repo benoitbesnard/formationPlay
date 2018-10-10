@@ -10,5 +10,7 @@ scalaVersion := "2.12.6"
 
 libraryDependencies += guice
 libraryDependencies += javaJdbc
+libraryDependencies += evolutions
 libraryDependencies += ws
+libraryDependencies += ehcache
 libraryDependencies += "com.h2database" % "h2" % "1.4.197"

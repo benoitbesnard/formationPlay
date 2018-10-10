@@ -1,0 +1,9 @@
+@(employees: List[Employee])
+
+@main(Messages("title.page.employees")) {
+	<ul>
+	@for(employee <- employees) {
+		<li>@Messages("employee.age", employee.getLastname, employee.getFirstname, employee.getAge)</li>
+	}
+	</ul>
+}

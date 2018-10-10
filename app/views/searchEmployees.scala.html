@@ -1,0 +1,10 @@
+@* searchEmployees Template File *@
+@(formData: Form[forms.EmployeeName])
+
+@main("Formulaire de recherche") {
+	@helper.form(routes.EmployeeController.search) {
+		@helper.CSRF.formField
+		@helper.inputText(formData("name"))
+		<button type="submit">@Messages("search")</button>
+	}
+}

@@ -4,3 +4,7 @@ form.validate=Validate
 
 error.content.size=The content must 0 or more than 3 characters
 #error.required=Test
+
+title.page.employees=Employees
+
+employee.age={0} {1} is {2} years old

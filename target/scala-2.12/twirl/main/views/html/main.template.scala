@@ -68,7 +68,7 @@ Seq[Any](format.raw/*8.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 10 08:49:32 CEST 2018
+                  DATE: Wed Oct 10 14:13:11 CEST 2018
                   SOURCE: /Users/bbesnard/formationPlay/test2/app/views/main.scala.html
                   HASH: 72925d0adf85b4a2eacc818d75650a288749a0ba
                   MATRIX: 1206->260|1330->291|1357->292|1437->397|1473->406|1508->414|1534->419|1623->481|1638->487|1701->528|1789->589|1804->595|1865->634|1950->781|1987->791|2015->798|2045->801|2108->837|2123->843|2184->883

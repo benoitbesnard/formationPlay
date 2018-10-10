@@ -11,10 +11,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import forms.UserData;
 import forms.Users;
+import models.User;
 import play.Logger;
 import play.data.Form;
 import play.data.FormFactory;
 import play.libs.Json;
+import play.libs.ws.WSClient;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -24,12 +26,13 @@ public class HelloworldController extends Controller {
 
 	private ConfigurationService config;
 	private FormFactory formFactory;
-	private play.libs.ws.WSClient client;
+	private WSClient client;
 
 	@Inject
 	public HelloworldController(ConfigurationService config,
 				FormFactory formFactory,
-				play.libs.ws.WSClient client) {
+				WSClient client) {
+		this.client = client;
 		this.formFactory = formFactory;
 		this.config = config;
 	}
@@ -96,6 +99,7 @@ public class HelloworldController extends Controller {
 			}
 			users.add(user);
 		}
+		
 		return ok(Json.toJson(users));
 	}
 	
